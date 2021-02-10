@@ -3,9 +3,6 @@ Gagnagrunnurinn geymir lýsingu á því hvað felst með hverju umboði fyrir s
 gagnagrunninn sem sér um umsýsluna á gögnunum.
 
 
-![Hugmynd að útfærslu af gagnagrunninum fyrir umboðskerfið](https://csb93cb1d41756fx434exb79.blob.core.windows.net/letsaddsomepictures/umbodskerfishugmynd.png)
-
-
 Gögn frá get fyrirspurn sem að nær í gögn um ákveðið umboð fyrir ákveðið fyrirtæki eða einstakling, t.d. Fugla, gæti þá litið einhvern veginn svona út
 ```
 {
