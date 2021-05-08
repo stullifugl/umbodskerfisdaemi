@@ -1,9 +1,9 @@
-Ég úbjó stutt sýnidæmi um hvernig ég held að einföld útgáfa af umboðskerfisgagnagrunninum geti verið settur upp.\
-Gagnagrunnurinn geymir lýsingu á því hvað felst með hverju umboði fyrir sig og framenda væri hægt að smíða ofan á þjónustu sem talar við\
-gagnagrunninn sem sér um umsýsluna á gögnunum.
+I made a short example of one version of how the registration database could be set up.\
+The database stores a description of what each registration beholds and a front-end could be build upon a service that talks to the \
+database that handles the registration data.
 
 
-Gögn frá get fyrirspurn sem að nær í gögn um ákveðið umboð fyrir ákveðið fyrirtæki eða einstakling, t.d. Fugla, gæti þá litið einhvern veginn svona út
+Data from a get http request that fetches data about a certain registration for a company or an individual, f.x. Fuglar ehf, could then look something like this
 ```
 {
     "info": {
@@ -81,7 +81,7 @@ Gögn frá get fyrirspurn sem að nær í gögn um ákveðið umboð fyrir ákve
 }
 ```
 
-Get query-a sem að nær í gögn fyrir client (eins og island.is) um ákveðinn notenda með kennitölu "111111-1111"
+A get http reuest that fetches data for a client (like island.is) about a certain user with a social security number "111111-1111"
 ```
 {
     "user": {
@@ -115,15 +115,15 @@ Get query-a sem að nær í gögn fyrir client (eins og island.is) um ákveðinn
     ]
 }
 ```
-Hugmyndin hér er að display_name er gildið sem að client-arnir noti til að birta module-ana á island.is
+The idea here is that the display_name is the value that the clients use to publish the modules on the island.is front-end
 ####
 ####
 ####
 ####
 
-OPA útfærslan gæti þá litið einhvern veginn svona út
+OPA implementation then could look something like this
 
-Reglur og poliy-ur
+Rules and policies
 ```
 package app.abac
 
@@ -165,7 +165,7 @@ user_is_delegated {
 ```
 
 
-Input frá rest endapunkti inn í OPA
+Input from a rest endpoint into OPA
 ```
 {
     "user": "111111-1111",
@@ -176,7 +176,7 @@ Input frá rest endapunkti inn í OPA
 }
 ```
 
-Gögn sem eru sótt frá umboðskerfisgagnagrunninum út frá input gildunum. 
+Data collected from the registration database from the input values
 ```
 {
   "delegations": [
@@ -258,7 +258,7 @@ Gögn sem eru sótt frá umboðskerfisgagnagrunninum út frá input gildunum.
 }
 ```
 
-Output-ið frá OPA til þjónustunnar verður þá
+The output from OPA to the REST service then will be
 ```
 {
   "allow": true,
